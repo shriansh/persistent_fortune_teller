@@ -1,0 +1,17 @@
+<h1>hello</h1>
+
+
+<%= "Number One is  " + @num1.to_s  %>
+<p></p>
+
+<%= "Number Two is  " + @num2.to_s  %>
+
+
+
+<% random = 0 %>
+<% random = rand(@num1.to_i...@num2.to_i) %>
+
+
+
+<p></p>
+<%= "The random number  is  " + random.to_s  %>
