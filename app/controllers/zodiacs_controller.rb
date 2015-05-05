@@ -39,7 +39,23 @@ class ZodiacsController < ApplicationController
     render 'index'
   end
 
-def new_form
+  def new_form
 
-end
+  end
+
+  def create_row
+    z = Zodiac.new
+    z.sign = params[:symbol]
+    z.creature = params[:animal]
+    z.fortune = params[:fortune]
+    z.save
+    redirect_to("http://localhost:3000/zodiacs")
+  end
+
+  def destroy
+    z= Zodiac.find(params[:the_id])
+    z.destroy
+    redirect_to("http://localhost:3000/zodiacs")
+  end
+
 end
